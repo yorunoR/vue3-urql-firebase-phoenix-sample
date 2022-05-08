@@ -1,5 +1,6 @@
 defmodule SampleWeb.UserSocket do
   use Phoenix.Socket
+  use Absinthe.Phoenix.Socket, schema: Graphql.Schema
 
   # A Socket handler
   #

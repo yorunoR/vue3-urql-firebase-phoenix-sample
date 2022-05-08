@@ -51,7 +51,8 @@ defmodule SampleWeb.MixProject do
       {:sample, in_umbrella: true},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:kaffy, github: "arturictus/kaffy", branch: "update_phx"}
+      {:kaffy, github: "arturictus/kaffy", branch: "update_phx"},
+      {:absinthe_phoenix, "~> 2.0"}
     ]
   end
 

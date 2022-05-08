@@ -11,9 +11,10 @@ defmodule SampleWeb.Application do
       # Start the Telemetry supervisor
       SampleWeb.Telemetry,
       # Start the Endpoint (http/https)
-      SampleWeb.Endpoint
+      SampleWeb.Endpoint,
       # Start a worker by calling: SampleWeb.Worker.start_link(arg)
       # {SampleWeb.Worker, arg}
+      {Absinthe.Subscription, SampleWeb.Endpoint}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
