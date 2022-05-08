@@ -13,6 +13,7 @@
     "codegen:fix": "yarn codegen && yarn lint:fix"
   },
   "dependencies": {
+    "@urql/exchange-auth": "^0.1.7",
     "@urql/vue": "^0.6.2",
     "core-js": "^3.8.3",
     "firebase": "^9.8.0",
