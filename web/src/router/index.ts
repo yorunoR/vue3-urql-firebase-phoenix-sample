@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import PingView from "../views/PingView.vue";
+import SignInView from "../views/SignInView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -16,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/ping",
     name: "ping",
     component: PingView,
+  },
+  {
+    path: "/sign_in",
+    name: "sign_in",
+    component: SignInView,
   },
   {
     path: "/about",

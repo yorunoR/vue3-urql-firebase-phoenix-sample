@@ -2,7 +2,8 @@
   <nav>
     <router-link to="/home">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/ping">Ping</router-link>
+    <router-link to="/ping">Ping</router-link> |
+    <router-link to="/sign_in">SignIn</router-link>
   </nav>
   <router-view />
 </template>
