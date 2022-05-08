@@ -13,11 +13,13 @@
     "codegen:fix": "yarn codegen && yarn lint:fix"
   },
   "dependencies": {
+    "@types/phoenix": "^1.5.4",
     "@urql/exchange-auth": "^0.1.7",
     "@urql/vue": "^0.6.2",
     "core-js": "^3.8.3",
     "firebase": "^9.8.0",
     "graphql": "^16.4.0",
+    "phoenix": "^1.6.8",
     "primeflex": "^3.2.0",
     "primeicons": "^5.0.0",
     "primevue": "^3.12.6",
