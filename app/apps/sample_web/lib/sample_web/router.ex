@@ -1,6 +1,10 @@
 defmodule SampleWeb.Router do
   use SampleWeb, :router
 
+  use Kaffy.Routes,
+    scope: "/admin",
+    pipe_through: [:fetch_current_admin_user, :require_authenticated_admin_user]
+
   import SampleWeb.AdminUserAuth
 
   pipeline :browser do

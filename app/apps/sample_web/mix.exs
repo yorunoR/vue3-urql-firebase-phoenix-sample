@@ -50,7 +50,8 @@ defmodule SampleWeb.MixProject do
       {:gettext, "~> 0.18"},
       {:sample, in_umbrella: true},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:kaffy, github: "arturictus/kaffy", branch: "update_phx"}
     ]
   end
 
