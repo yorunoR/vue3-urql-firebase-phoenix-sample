@@ -1,7 +1,8 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/ping">Ping</router-link>
   </nav>
   <router-view />
 </template>
@@ -28,3 +29,10 @@ nav {
   }
 }
 </style>
+
+<script setup lang="ts">
+import { provideClient } from "@urql/vue";
+import { makeClient } from "@/services/client";
+
+provideClient(makeClient());
+</script>
