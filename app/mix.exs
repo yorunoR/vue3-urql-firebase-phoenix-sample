@@ -1,4 +1,4 @@
-defmodule Sample.Umbrella.MixProject do
+defmodule App.MixProject do
   use Mix.Project
 
   def project do
