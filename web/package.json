@@ -8,10 +8,13 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "lint:fix": "vue-cli-service lint --fix",
-    "commit": "cd ../ && yarn commit"
+    "commit": "cd ../ && yarn commit",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "codegen:fix": "yarn codegen && yarn lint:fix"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "graphql": "^16.4.0",
     "primeflex": "^3.2.0",
     "primeicons": "^5.0.0",
     "primevue": "^3.12.6",
@@ -21,6 +24,8 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.4.10",
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
