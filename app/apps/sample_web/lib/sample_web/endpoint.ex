@@ -10,6 +10,10 @@ defmodule SampleWeb.Endpoint do
     signing_salt: "zLkqDzv2"
   ]
 
+  socket "/socket", SampleWeb.UserSocket,
+    websocket: true,
+    longpoll: false
+
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
