@@ -5,6 +5,10 @@ import PingView from "../views/PingView.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
+    redirect: "/home",
+  },
+  {
+    path: "/home",
     name: "home",
     component: HomeView,
   },
