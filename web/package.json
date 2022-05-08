@@ -15,11 +15,13 @@
   "dependencies": {
     "@urql/vue": "^0.6.2",
     "core-js": "^3.8.3",
+    "firebase": "^9.8.0",
     "graphql": "^16.4.0",
     "primeflex": "^3.2.0",
     "primeicons": "^5.0.0",
     "primevue": "^3.12.6",
     "register-service-worker": "^1.7.2",
+    "sweetalert": "^2.1.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
