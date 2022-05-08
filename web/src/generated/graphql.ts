@@ -26,9 +26,25 @@ export type RootQueryType = {
   ping?: Maybe<Status>;
 };
 
+export type RootSubscriptionType = {
+  __typename?: "RootSubscriptionType";
+  newUser?: Maybe<User>;
+};
+
 export type Status = {
   __typename?: "Status";
   status?: Maybe<Scalars["Boolean"]>;
+};
+
+export type User = {
+  __typename?: "User";
+  activated?: Maybe<Scalars["Boolean"]>;
+  email?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars["ID"]>;
+  name?: Maybe<Scalars["String"]>;
+  profileImage?: Maybe<Scalars["String"]>;
+  role?: Maybe<Scalars["Int"]>;
+  uid?: Maybe<Scalars["String"]>;
 };
 
 export type PingQueryVariables = Exact<{ [key: string]: never }>;
@@ -36,6 +52,17 @@ export type PingQueryVariables = Exact<{ [key: string]: never }>;
 export type PingQuery = {
   __typename?: "RootQueryType";
   ping?: { __typename?: "Status"; status?: boolean | null } | null;
+};
+
+export type NewUserSubscriptionVariables = Exact<{ [key: string]: never }>;
+
+export type NewUserSubscription = {
+  __typename?: "RootSubscriptionType";
+  newUser?: {
+    __typename?: "User";
+    id?: string | null;
+    name?: string | null;
+  } | null;
 };
 
 export const PingDocument = gql`
@@ -50,4 +77,26 @@ export function usePingQuery(
   options: Omit<Urql.UseQueryArgs<never, PingQueryVariables>, "query"> = {}
 ) {
   return Urql.useQuery<PingQuery>({ query: PingDocument, ...options });
+}
+export const NewUserDocument = gql`
+  subscription NewUser {
+    newUser {
+      id
+      name
+    }
+  }
+`;
+
+export function useNewUserSubscription<R = NewUserSubscription>(
+  options: Omit<
+    Urql.UseSubscriptionArgs<never, NewUserSubscriptionVariables>,
+    "query"
+  > = {},
+  handler?: Urql.SubscriptionHandlerArg<NewUserSubscription, R>
+) {
+  return Urql.useSubscription<
+    NewUserSubscription,
+    R,
+    NewUserSubscriptionVariables
+  >({ query: NewUserDocument, ...options }, handler);
 }

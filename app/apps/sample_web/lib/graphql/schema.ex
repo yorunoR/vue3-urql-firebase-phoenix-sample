@@ -3,6 +3,7 @@ defmodule Graphql.Schema do
 
   import_types(Absinthe.Type.Custom)
   import_types(__MODULE__.CommonTypes)
+  import_types(__MODULE__.AccountTypes)
 
   query do
     field :ping, :status do
@@ -13,6 +14,11 @@ defmodule Graphql.Schema do
   # mutation do
   # end
 
-  # subscription do
-  # end
+  subscription do
+    field :new_user, :user do
+      config(fn _args, _ ->
+        {:ok, topic: "*"}
+      end)
+    end
+  end
 end
